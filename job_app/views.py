@@ -6,7 +6,7 @@ from rest_framework import viewsets,status,generics
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework.permissions import IsAuthenticated
-# from .permissions import *
+from .permissions import *
 from django.http import HttpResponse, Http404
 import json
 from rest_framework import filters  
@@ -92,15 +92,15 @@ class ProfileList(APIView):
         
 class JobViewSet(viewsets.ModelViewSet):
     """
-    A viewset for viewing and editing shop instances.
+    A viewset for viewing and editing job instances.
     """
     serializer_class = JobSerializer
-    queryset = Shop.objects.all()
+    queryset = Job.objects.all()
     
-class ShopsViewSet(APIView):
+class JobsViewSet(APIView):
     def get(self, request, format=None):      
         jobs = Job.objects.all()
-        serializer = JobSerializer(shops, many=True)
+        serializer = JobSerializer(jobs, many=True)
         return Response(serializer.data)
     
     def post(self, request, format=None):
