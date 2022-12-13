@@ -104,7 +104,7 @@ class JobsViewSet(APIView):
         return Response(serializer.data)
     
     def post(self, request, format=None):
-        permission_classes = [IsAuthenticated,IsMerchantOrAdmin]
+        permission_classes = [IsAuthenticated]
         serializer = JobSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
