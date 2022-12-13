@@ -27,7 +27,7 @@ class LogoutSerializer(serializers.Serializer):
     refresh_token=serializers.CharField()
     
     
-class ShopSerializer(serializers.ModelSerializer):
+class JobSerializer(serializers.ModelSerializer):
     class Meta:
         model = Job
         fields = ['id','job_title','description','date_published','address','city','country','phone_no']
