@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     # 'django-filer',
 ]
 
-AUTH_USER_MODEL = 'dukaapp.User'
+AUTH_USER_MODEL = 'job_app.User'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
