@@ -62,12 +62,12 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
 
-    CUSTOMER = 1
-    MERCHANT = 2
+    APPLICANT = 1
+    CLIENT = 2
     ADMIN = 3
     ROLE_CHOICES = (
-        (CUSTOMER, 'customer'),
-        (MERCHANT, 'merchant'),
+        (APPLICANT, 'applicant'),
+        (CLIENT, 'client'),
         (ADMIN, 'admin'),
     )
     email = models.EmailField(_('email address'), unique=True)
